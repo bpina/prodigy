@@ -1,0 +1,14 @@
+<table>
+  <thead>
+      <th>character</th>
+      <th>server</th>
+  </thead>
+  <tbody>
+    {% for character in characters %}
+    <tr>
+      <td>{{ character.name }}</td>
+      <td>{{ character.server.name }}</td>
+    </tr>
+    {% endfor %}
+  <tbody>
+</table>

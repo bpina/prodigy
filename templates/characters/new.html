@@ -1,0 +1,8 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+<form id="create-character" action="/characters/create/">{% csrf_token %}
+{{ form.as_ul }}
+<input type="submit" value="Add" />
+</form>
+{% endblock %}

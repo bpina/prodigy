@@ -1,0 +1,9 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+{{ errors }}
+<form id="login-form" action="/security/login/" method="post">{% csrf_token %}
+{{ login_form.as_ul }}
+<input type="submit" value="Login" />
+</form>
+{% endblock %}

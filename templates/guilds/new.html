@@ -1,0 +1,16 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+<h2>Add your guild!</h2>
+
+<form id="create-guild-form" action="/guilds/create/" method="post"> {% csrf_token %}
+  <h3>Guild Master</h3>
+  <span>{{ character }}</span>
+  <h3>Realm</h3>
+  <span>{{ character.server }}</span>
+  <fieldset>
+    {{ form.as_ul }}
+    <input type="submit" value="Add" />
+  </fieldset>
+</form>
+{% endblock %}

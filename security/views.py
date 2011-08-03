@@ -20,9 +20,13 @@ def login(request):
         if request.is_ajax():
           return HttpResponse()
         else:
-          return HttpResponseRedirect('/')
+          return HttpResponseRedirect('/users/' + user.username)
       else:
         return render(request, 'security/login.html', {'login_form': login_form})
     else:
       print login_form.errors
       return render(request, 'security/login.html', {'login_form': login_form, 'errors': login_form.errors})
+
+def logout(request):
+  auth.logout(request)
+  return HttpResponseRedirect('/')

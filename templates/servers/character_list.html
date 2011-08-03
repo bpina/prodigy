@@ -1,0 +1,26 @@
+<table id="{{ id }}" class="{{ class }}">
+  <thead>
+    <th>
+      Character
+    </th>
+    <th>
+      Guild
+    </th>
+  </thead>
+  <tbody>
+    {% for character in characters %}
+    <tr id="{{ character.id }}-user-character" class="character-list-item">
+      <td>
+        <a href="/characters/{{ character.server }}/{{ character }}">
+          {{ character }}
+        </a>
+      </td>
+      <td>
+        <a href="/guilds/{{ character.server}}/{{ character.guild }}">
+          {{ character.guild }}
+        </a>
+      <td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

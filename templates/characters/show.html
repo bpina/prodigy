@@ -1,2 +1,10 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
 <h1>{{ character.name }}</h1>
-<span>{{ character.server }}</span>
+<span>
+  <a href="/servers/{{ character.server }}">
+    {{ character.server }}
+  </a>
+</span>
+{% endblock %}

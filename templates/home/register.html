@@ -3,7 +3,11 @@
 {% block content %}
 <h2>Register</h2>
 <form id="register-form" action="/register/" method="post">{% csrf_token %}
-{{ user_form.as_ul }}
-<input type="submit" value="Register" />
+  <fieldset>
+    <ul>
+      {{ user_form.as_ul }}
+    </ul>
+  </fieldset>
+  <input type="submit" value="Register" />
 </form>
 {% endblock %}

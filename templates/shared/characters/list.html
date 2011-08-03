@@ -1,0 +1,38 @@
+<table id="{{ id }}" class="{{ class }}">
+  <thead>
+    <th>
+      Character
+    </th>
+    <th>
+      Server
+    </th>
+  </thead>
+  <tbody>
+    {% for character in characters %}
+    <tr id="{{ character.id }}-user-character" class="character-list-item">
+      <td>
+        <a href="/characters/{{ character.server }}/{{ character }}">
+          {{ character }}
+        </a>
+      </td>
+      <td>
+        <a href="/servers/{{ character.server }}">
+          {{ character.server }}
+        </a>
+      <td>
+      <td>
+        <span class="character-is-default-label">
+          {% if character.is_default %}
+          default
+          {% endif %}
+        <span>
+      </td>
+      <td>
+        {% if not character.is_default %}
+          <a href="javascript:void(0)" id="{{ character.id }}-character-make-default-link" class="character-make-default-link">Make Default</a>          
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

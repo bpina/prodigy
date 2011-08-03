@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.models import User
 
 def index(request):
-  return render_to_response('home/index.html')
+  return render(request, 'home/index.html')
 
 @csrf_protect
 def register(request):

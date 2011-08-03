@@ -6,6 +6,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     {% load static %}<script type="text/javascript" src="{% static "js/csrf.js" %}"></script>    
     <script type="text/javascript" src="{% static "js/app.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
 </head>
 <body>
   <div id="wrapper">
@@ -16,6 +17,12 @@
       <li><a href="/">Home</a></li>
       <li><a href="/characters">Characters</a></li>
       <li><a href="/register">Resgitration</a></li>
+      <li><a href="/security/login">Login</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="/users/{{ user.username }}">User</a></li>
+      <li><a href="/guilds/create">Add Guild</a></li>
+      <li><a href="/security/logout">Logout</a></li>
+      {% endif %}
     </ul>
     <div id="content">
       {% block content %}{% endblock %}

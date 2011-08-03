@@ -1,6 +1,11 @@
 {% extends "layouts/application.html" %}
 
 {% block content %}
-<h2>{{ user.username }}</h2>
-<span>{{ user.email }}</span>
+<h2>{{ displayed_user.username }}</h2>
+<span>{{ displayed_user.email }}</span>
+<h3>Characters</h3>
+{% include "shared/characters/list.html" with id="user-characters-list" class="" characters=characters %}
+{% if session_user %}
+{% include "shared/characters/create_inline.html" with id="user-character-create" form=create_character_form %}
+{% endif %}
 {% endblock %}

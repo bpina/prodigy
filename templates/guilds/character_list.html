@@ -1,0 +1,33 @@
+<table id="{{ id }}" class="{{ class }}">
+  <thead>
+    <th>
+      Character
+    </th>
+    <th>
+      Server
+    </th>
+  </thead>
+  <tbody>
+    {% for character in characters %}
+    <tr id="{{ character.id }}-user-character" class="character-list-item">
+      <td>
+        <a href="/characters/{{ character.server }}/{{ character }}">
+          {{ character }}
+        </a>
+      </td>
+      <td>
+        <a href="/servers/{{ character.server }}">
+          {{ character.server }}
+        </a>
+      <td>
+      <td>
+        <span class="character-is-default-label">
+          {% if character.is_guild_master %}
+          Guild Master
+          {% endif %}
+        <span>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

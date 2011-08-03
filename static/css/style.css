@@ -1,0 +1,105 @@
+html, body {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  background: #FFF;
+  color: #000;
+  font-family: "Helvetica", arial, verdana, sans-serif;
+}
+
+#header {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  background: #333;
+}
+
+  #header>h1 {
+    display: inline;
+    height: 2.5em;
+    padding: 0;
+    margin: .5em;
+  }
+
+#navigation {
+  margin: 0;
+  padding: 0;
+  display: 0;
+  list-style-type: none;
+  overflow: auto;
+  width: 100%;
+  background: #666;
+}
+
+  #navigation>li {
+    float: left;
+    margin: 0 1em 0 0;
+    padding: 0 0 0 0;
+    display: block;
+  }
+
+  #navigation li a {
+    display: block;
+    font-weight: bold;
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  #navigation>li>a:hover {
+    background: #333;
+  }
+
+#wrapper {
+  width: 65%;
+  margin: 0 auto;
+}
+
+#content {
+  margin: 0;
+  padding: .5em;
+}
+
+  #content>h2 {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: 2em;
+    color: #666;
+    width: 100%;
+  }
+
+  #content>form>fieldset {
+    border: 1px solid #666;
+    background: #ccc;
+  }
+
+    #content>form>fieldset>ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #content>form>fieldset>ul>li {
+      margin: 0;
+      padding: 1em 0;
+      color: #fff;
+    }
+
+    #content>form>fieldset>ul>li>label {
+      height: 100%;
+      float: left;
+      width: 10em;
+      font-size: 2em;
+      color: #333;
+    }
+
+    #content>form>fieldset>ul>li>input[type=text], #content>form>fieldset>ul>li>input[type=password] {
+      border: 1px solid #333;
+      background: #666;
+      padding: 0;
+      margin: 0;
+      color: #000;
+      font-size: 2em;
+    }

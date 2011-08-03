@@ -1,0 +1,4 @@
+<form id="{{ id }}" remote="true" action="/characters/create/" method="post">{% csrf_token %}
+{{ form.as_ul }}
+<input type="submit" value="Add" />
+</form>

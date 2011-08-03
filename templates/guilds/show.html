@@ -1,0 +1,8 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+<h2>{{ guild.name }}</h2>
+<span>{{ guild.server.name }}</span>
+
+{% include "guilds/character_list.html" with characters=characters %}
+{% endblock%}

@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render, render_to_response
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from home.forms import UserForm
 from django.views.decorators.csrf import csrf_protect

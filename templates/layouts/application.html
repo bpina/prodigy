@@ -9,23 +9,38 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}" />
 </head>
 <body>
-  <div id="wrapper">
-    <div id="header">
+  <div id="header">
+    <div id="header-content">
       <h1>Prodigy</h1>
+      {% if user.is_authenticated %}
+      <div id="header-user-details">
+        <span>
+          Welcome, {{ user.username }}!
+        </span>
+        {% if default_character %}
+        <span>
+          Current Character: {{ default_character }} [<a href="/user/change_character">Change</a>]
+        </span>
+        {% endif %}
+      </div>
+      {% endif %}
     </div>
+  </div>
+  <div id="navigation-container">
     <ul id="navigation">
       <li><a href="/">Home</a></li>
-      <li><a href="/characters">Characters</a></li>
-      <li><a href="/register">Resgitration</a></li>
-      <li><a href="/security/login">Login</a></li>
       {% if user.is_authenticated %}
-      <li><a href="/users/{{ user.username }}">User</a></li>
+      <li><a href="/user">User</a></li>
       <li><a href="/guilds/create">Add Guild</a></li>
       <li><a href="/security/logout">Logout</a></li>
+      {% else %}
+      <li><a href="/security/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
       {% endif %}
     </ul>
-    <div id="content">
-      {% block content %}{% endblock %}
-    </div>
+  </div>
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
 </body>
 </html>

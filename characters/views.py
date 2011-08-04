@@ -18,7 +18,7 @@ def show(request, server_name, character_name):
 @csrf_protect
 def create(request):
   if request.method == 'GET':
-    return HttpResponse(status=404)
+    return render(request, 'characters/new.html', {'form': CharacterForm()})
   else:
     form = CharacterForm(request.POST)
     if form.is_valid():
@@ -30,7 +30,7 @@ def create(request):
       if request.is_ajax():
         return HttpResponse(data, "application/javascript")
       else:
-        return HttpResponseRedirect('/users/' + c.user.username)
+        return HttpResponseRedirect('/characters/' + str(c.server) + str(c))
     else:
       return HttpResponse(status=400)
 

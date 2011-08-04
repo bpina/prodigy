@@ -1,0 +1,9 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+<h2>{{ user.username }}</h2>
+<span>{{ user.email }}</span>
+<h3>Characters</h3>
+{% include "shared/characters/list.html" with id="user-characters-list" class="" characters=characters %}
+<p>Click here to <a href="/characters/new">add a new character!</a>
+{% endblock %}

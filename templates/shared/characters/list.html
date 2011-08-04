@@ -1,35 +1,29 @@
 <table id="{{ id }}" class="{{ class }}">
   <thead>
-    <th>
-      Character
-    </th>
-    <th>
-      Server
-    </th>
+    <tr>
+      <th>
+        Character
+      </th>
+      <th>
+        Guild
+      </th>
+    </tr>
   </thead>
   <tbody>
     {% for character in characters %}
-    <tr id="{{ character.id }}-user-character" class="character-list-item">
+    <tr id="{{ character.id }}-user-character" class="character-list-item {% cycle '' 'alternating' %}">
       <td>
         <a href="/characters/{{ character.server }}/{{ character }}">
           {{ character }}
         </a>
       </td>
       <td>
-        <a href="/servers/{{ character.server }}">
-          {{ character.server }}
+        {% if character.guild %}
+        <a href="/guilds/{{ character.server}}/{{ character.guild }}">
+          {{ character.guild }}
         </a>
-      <td>
-      <td>
-        <span class="character-is-default-label">
-          {% if character.is_default %}
-          default
-          {% endif %}
-        <span>
-      </td>
-      <td>
-        {% if not character.is_default %}
-          <a href="javascript:void(0)" id="{{ character.id }}-character-make-default-link" class="character-make-default-link">Make Default</a>          
+        {% else %}
+        None
         {% endif %}
       </td>
     </tr>

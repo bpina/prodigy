@@ -4,61 +4,90 @@ html, body {
 }
 
 body {
-  background: #FFF;
+  margin: 0;
+  padding: 0;
+  background: #fff;
   color: #000;
   font-family: "Helvetica", arial, verdana, sans-serif;
 }
 
 #header {
   margin: 0;
+  height: 5em;
   padding: 0;
   color: #FFF;
-  background: #333;
+  background: #506A7D;
 }
 
-  #header>h1 {
+#header-content {
+  width: 60%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+  #header-content>h1 {
     display: inline;
     height: 2.5em;
     padding: 0;
-    margin: .5em;
+    margin: .2em;
+    color: #FFF;
+    line-height: 3.5em;
+    vertical-align: bottom;
   }
 
-#navigation {
+#header-user-details {
+  float: right;
+  padding: 0;
   margin: 0;
+  font-size: .8em;
+}
+
+
+
+#navigation-container {
+  width: 100%;
+  background: #97B4CA;
+}
+
+#navigation {
+  margin: 0 auto;
   padding: 0;
   display: 0;
   list-style-type: none;
   overflow: auto;
-  width: 100%;
-  background: #666;
+  width: 60%;
 }
 
   #navigation>li {
     float: left;
-    margin: 0 1em 0 0;
-    padding: 0 0 0 0;
+    margin: 0;
+    padding: 0;
     display: block;
   }
 
   #navigation li a {
     display: block;
+    padding: .5em 2em .5em .5em;
     font-weight: bold;
-    color: #FFF;
+    color: #333;
     text-decoration: none;
   }
 
   #navigation>li>a:hover {
-    background: #333;
+    background: #506A7D;
+    color: #fff;
   }
 
 #wrapper {
-  width: 65%;
+  width: 55%;
   margin: 0 auto;
+  padding: 0;
 }
 
 #content {
-  margin: 0;
-  padding: .5em;
+  width: 60%;
+  margin: 2em auto;
+  padding: 0;
 }
 
   #content>h2 {
@@ -66,13 +95,13 @@ body {
     padding: 0;
     margin: 0;
     height: 2em;
-    color: #666;
+    color: #506A7D;
     width: 100%;
   }
 
   #content>form>fieldset {
-    border: 1px solid #666;
-    background: #ccc;
+    border: 1px solid #333;
+    background: #506A7D;
   }
 
     #content>form>fieldset>ul {
@@ -92,14 +121,81 @@ body {
       float: left;
       width: 10em;
       font-size: 2em;
+      color: #FFF;
+    }
+
+    #content>form>fieldset>ul>li>input {
+      border: 1px solid #333;
+      background: #97B4CA;
+      padding: 0;
+      margin: 0;
+      color: #333;
+      font-size: 2em;
+    }
+
+  #content>h3 {
+    color: #506A7D;
+  }
+
+  #content table {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid #333;
+  }
+    
+    #content table>thead {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #content table>thead>tr {
+      background: #506A7D;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      width: 100%;
+    }
+
+    #content table>thead>tr>th {
+      margin: 0;
+      padding: .5em .2em;
+      text-align: left;
+    }
+
+    #content table>tbody>tr {
+      background: #fff;
+      font-weight: bold;
+      color: #000;
+    }
+
+        #content table>tbody>tr>td {
+      margin: 0;
+      padding: .5em 1em;
+    }#content table>tbody {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #content table>tbody>tr>td {
+      margin: 0;
+      padding: .5em .2em;
+    }
+
+    #content table>tbody>tr>td>a {
+      color: #000;
+    }
+
+    #content table>tbody>tr.alternating {
+      background: #97B4CA;
       color: #333;
     }
 
-    #content>form>fieldset>ul>li>input[type=text], #content>form>fieldset>ul>li>input[type=password] {
-      border: 1px solid #333;
-      background: #666;
-      padding: 0;
-      margin: 0;
-      color: #000;
-      font-size: 2em;
+    #content table>tbody>tr.alternating>td>>a {
+      color: #333;
     }
+
+

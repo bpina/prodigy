@@ -1,15 +1,17 @@
 <table id="{{ id }}" class="{{ class }}">
   <thead>
-    <th>
-      Character
-    </th>
-    <th>
-      Guild
-    </th>
+    <tr>
+      <th>
+        Character
+      </th>
+      <th>
+        Guild
+      </th>
+    </tr>
   </thead>
   <tbody>
     {% for character in characters %}
-    <tr id="{{ character.id }}-user-character" class="character-list-item">
+    <tr id="{{ character.id }}-user-character" class="character-list-item {% cycle '' 'alternating' %}">
       <td>
         <a href="/characters/{{ character.server }}/{{ character }}">
           {{ character }}
@@ -19,7 +21,7 @@
         <a href="/guilds/{{ character.server}}/{{ character.guild }}">
           {{ character.guild }}
         </a>
-      <td>
+      </td>
     </tr>
     {% endfor %}
   </tbody>

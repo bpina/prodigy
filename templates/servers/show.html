@@ -3,6 +3,6 @@
 {% block content %}
 <h2>{{ server }}</h2>
 
-<h3>Characters</h3>
+<h3>Characters on {{ server }}:</h3>
 {% include "servers/character_list.html" with characters=characters %}
 {% endblock %}

@@ -2,7 +2,12 @@
 
 {% block content %}
 <form id="create-character" action="/characters/create/">{% csrf_token %}
-{{ form.as_ul }}
-<input type="submit" value="Add" />
+  <fieldset>
+    <ul>
+      {{ form.as_ul }}
+      <li>
+        <input type="submit" value="Add" />
+      </li>
+    </ul>
 </form>
 {% endblock %}

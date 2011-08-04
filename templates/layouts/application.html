@@ -11,7 +11,7 @@
 <body>
   <div id="header">
     <div id="header-content">
-      <h1>Prodigy</h1>
+      <h1>guild fu</h1>
       {% if user.is_authenticated %}
       <div id="header-user-details">
         <span>
@@ -41,6 +41,9 @@
   </div>
   <div id="content">
     {% block content %}{% endblock %}
+  </div>
+  <div id="footer">
+    <a href="http://djangopony.com/" class="ponybadge" title="Magic! Ponies! Django! Whee!"><img src="http://media.djangopony.com/img/small/badge.png" width="210" height="65" alt="pony powered"></a>
   </div>
 </body>
 </html>

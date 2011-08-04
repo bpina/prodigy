@@ -18,7 +18,7 @@ def register(request):
     if user_form.is_valid():
       if post['password_one'] == post['password_two']:
         user = User.objects.create_user(post['username'], post['email'], post['password_one'])
-        return HttpResponseRedirect('/users/' + user.username)
+        return HttpResponseRedirect('/user/')
       else:
         errors = {'error': 'passwords do not match'}
         return render(request, 'home/register.html', {'user_form': user_form, 'errors': errors})

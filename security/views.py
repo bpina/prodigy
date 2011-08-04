@@ -20,7 +20,7 @@ def login(request):
         if request.is_ajax():
           return HttpResponse()
         else:
-          return HttpResponseRedirect('/user')
+          return HttpResponseRedirect('/user/')
       else:
         return render(request, 'security/login.html', {'login_form': login_form})
     else:

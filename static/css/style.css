@@ -86,8 +86,12 @@ body {
 
 #content {
   width: 60%;
-  margin: 2em auto;
-  padding: 0;
+  margin: 0 auto;
+  padding: .5em;
+  background: #eee;
+  border-right: 1px solid #506A7D;
+  border-left: 1px solid #506A7D;
+  border-bottom: 1px solid #ccc;
 }
 
   #content>h2 {
@@ -197,5 +201,9 @@ body {
     #content table>tbody>tr.alternating>td>>a {
       color: #333;
     }
+
+#footer {
+  text-align: center;
+}
 
 

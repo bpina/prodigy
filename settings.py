@@ -1,10 +1,10 @@
 # Django settings for prodigy project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('brian', 'brian.pina@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -56,7 +56,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/brian/git/templates'
+STATIC_ROOT = '/var/static/prodigy/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -64,7 +64,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home/brian/git/prodigy/static/',
+    '/var/sites/prodigy/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

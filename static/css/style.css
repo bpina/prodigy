@@ -15,13 +15,15 @@ body {
   margin: 0;
   height: 5em;
   padding: 0;
-  color: #FFF;
-  background: #506A7D;
+  color: #333;
+  background: #eee;
 }
 
 #header-content {
-  width: 60%;
+  width: 72em;
+  min-width: 60em;
   margin: 0 auto;
+  background: #eee;
   overflow: auto;
 }
 
@@ -30,7 +32,6 @@ body {
     height: 2.5em;
     padding: 0;
     margin: .2em;
-    color: #FFF;
     line-height: 3.5em;
     vertical-align: bottom;
   }
@@ -38,15 +39,21 @@ body {
 #header-user-details {
   float: right;
   padding: 0;
-  margin: 0;
+  margin: 0 1em 0 0;
   font-size: .8em;
 }
+
+  #header-user-details a {
+    color: #333;
+  }
 
 
 
 #navigation-container {
-  width: 100%;
   background: #97B4CA;
+  -moz-box-shadow: 2px 2px 2px #333;
+  -webkit-box-shadow: 2px 2px 2px #333;
+  box-shadow: 2px 2px 2px #333;
 }
 
 #navigation {
@@ -55,7 +62,8 @@ body {
   display: 0;
   list-style-type: none;
   overflow: auto;
-  width: 60%;
+  width: 72em;
+  min-width: 60em;
 }
 
   #navigation>li {
@@ -67,7 +75,7 @@ body {
 
   #navigation li a {
     display: block;
-    padding: .5em 2em .5em .5em;
+    padding: .5em .5em .5em .5em;
     font-weight: bold;
     color: #333;
     text-decoration: none;
@@ -85,16 +93,19 @@ body {
 }
 
 #content {
-  width: 60%;
-  margin: 0 auto;
+  width: 70em;
+  min-width: 60em;
+  margin: 1em auto;
   padding: .5em;
   background: #eee;
-  border-right: 1px solid #506A7D;
-  border-left: 1px solid #506A7D;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #506A7D;
+  border-bottom: 5px solid #506A7D;
+  -moz-box-shadow: 2px 2px 2px #333;
+  -webkit-box-shadow: 2px 2px 2px #333;
+  box-shadow: 2px 2px 2px #333;
 }
 
-  #content>h2 {
+  #content h2 {
     display: block;
     padding: 0;
     margin: 0;
@@ -105,7 +116,7 @@ body {
 
   #content>form>fieldset {
     border: 1px solid #333;
-    background: #506A7D;
+    background: #97B4CA;
   }
 
     #content>form>fieldset>ul {
@@ -125,12 +136,12 @@ body {
       float: left;
       width: 10em;
       font-size: 2em;
-      color: #FFF;
+      color: #333;
     }
 
     #content>form>fieldset>ul>li>input {
       border: 1px solid #333;
-      background: #97B4CA;
+      background: #eee;
       padding: 0;
       margin: 0;
       color: #333;
@@ -205,5 +216,68 @@ body {
 #footer {
   text-align: center;
 }
+
+#character-profile-header {
+  background: #333;
+  overflow: auto;
+  margin: 0 0 1em 0;
+  padding: .5em;
+  color: #FFF;
+  border: 1px solid #97B4CA;
+  border-bottom: 5px solid #97B4CA;
+}
+  #character-profile-header a {
+    color: #FFF;
+  }
+
+  #character-profile-header .character-thumbnail {
+    float: left;
+    padding: .3em .4em .2em .3em;
+    background: #97B4CA;
+    margin: 0 1em 0 0;
+  }
+
+  #character-profile-header>.character-thumbnail img {
+    margin: auto;
+    padding: 0;
+    -moz-box-shadow: 2px 2px 2px #333;
+    -webkit-box-shadow: 2px 2px 2px #333;
+    box-shadow: 2px 2px 2px #333;
+  }
+
+  #character-profile-header>p {
+    padding: 0;
+    margin: 0 0 1em 0;
+  }
+
+  #character-profile-header>p.classDetails {
+    float: right;
+  }
+
+#character-raid-progression {
+  overflow: auto;
+}
+
+  #character-raid-progression>div {
+    float: left;
+    margin: 0 1em 0 0;
+    color: #333;
+    width: 15em;
+  }
+
+  #character-raid-progression>div>span {
+    font-weight: bold;
+  }
+
+  #character-raid-progression>div>ul {
+    font-size: .8em;
+    list-style-type: none;
+    background: #333;
+    color: #fff;
+    padding: .5em;
+    margin: 0;
+    border: 1px solid #97B4CA;
+    border-bottom: 5px solid #97B4CA;
+  }
 
 

@@ -2,11 +2,38 @@
 
 {% block content %}
 <h2>{{ character.name }}</h2>
-<span>
-  <a href="/servers/{{ character.server }}">
-    {{ character.server }}
-  </a>
-
-  {{ character_data['name'] }}
-</span>
+<div id="character-profile-header">
+  <div class="character-thumbnail">
+    <img src="http://us.battle.net/static-render/us/{{ character_data.thumbnail }}" />
+  </div>
+  <p>
+    <a href="/servers/{{ character.server }}">
+      {{ character.server }}
+    </a>
+  </p>
+  <p>
+    &lt;{{ character_data.guild.name }}&gt;
+  </p>
+</div>
+{% if character_data.level == 85 %}
+<h2>Progression</h2>
+<div id="character-raid-progression">
+{% for raid in raids %}
+  <div>
+    <span>
+      {{ raid.name }}
+    </span>
+    <ul>
+      {% for boss in raid.bosses %}
+      {% if boss.heroicKills or boss.normalKills %}
+      <li>{{ boss.name }}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+{% else %}
+<p>This character has no raid progression information.</p>
+{% endif %}
+</div>
 {% endblock %}

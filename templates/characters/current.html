@@ -1,0 +1,47 @@
+{% extends "layouts/application.html" %}
+
+{% block content %}
+<h2>Change your current character</h2>
+{% if default_character %}
+<p>Your current character is: {{ default_character.name }}</p>
+{% endif %}
+<p>Please select your current character from the list below</p>
+<form action="/characters/current/" method="post">{% csrf_token %}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Server
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for character in characters %}
+      <tr class="{% cycle '' 'alternating' %}">
+        <td>
+          <input type="radio" name="character" value="{{ character.id }}" />
+        </td>
+        <td>
+          {{ character.name }}
+        </td>
+        <td>
+          {{ character.server.name }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">
+          <input type="submit" value="Change" />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+{% endblock %}

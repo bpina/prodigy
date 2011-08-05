@@ -6,6 +6,8 @@ from django.views.decorators.csrf import csrf_protect
 from django.core import serializers
 from django.utils import simplejson
 from pyarmory import assets
+from mongoarmory.tools import get_character_info, get_appropriate_raids
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 def index(request):
@@ -14,10 +16,10 @@ def index(request):
 
 def show(request, server_name, character_name):
   c = get_object_or_404(Character, name=character_name, server__name=server_name)
-  asset = assets.Character(c.server, c.name)
-  asset.load()
+  character_info = get_character_info(server_name, character_name)
+  raids = get_appropriate_raids(character_info)
 
-  return render(request, 'characters/show.html', {'character': c, 'character_data': asset})
+  return render(request, 'characters/show.html', {'character': c, 'character_data': character_info, 'raids': raids})
 
 @csrf_protect
 def create(request):
@@ -61,3 +63,26 @@ def update(request):
         return HttpResponseRedirect('/characters/update')
   else:
     return HttpResponse(status=400)
+
+def current(request):
+  user = request.user
+  if request.method == 'GET':
+    characters = user.character_set.filter(is_default=False)
+    return render(request, 'characters/current.html', {'characters': characters})
+  else:
+    if request.POST:
+      pk = request.POST['character']
+      c = user.character_set.get(pk=pk)
+      old = user.character_set.filter(is_default=True)
+      if old:
+        old[0].is_default = False
+        old[0].save()
+      c.is_default = True
+      c.save()
+      return HttpResponseRedirect('/user/')
+    else:
+      return HttpResponse(status=500)
+      
+      
+        
+      

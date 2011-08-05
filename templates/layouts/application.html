@@ -17,11 +17,14 @@
         <span>
           Welcome, {{ user.username }}!
         </span>
-        {% if default_character %}
         <span>
-          Current Character: {{ default_character }} [<a href="/characters/current">Change</a>]
-        </span>
+        {% if default_character %}
+          Current Character: {{ default_character }} 
+        {% else %}
+          You have no default!
         {% endif %}
+        [<a href="/characters/current">Change</a>]
+        </span>
       </div>
       {% endif %}
     </div>

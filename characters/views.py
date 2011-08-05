@@ -67,6 +67,8 @@ def update(request):
 def current(request):
   user = request.user
   if request.method == 'GET':
+    if not user.character_set.all():
+      return HttpResponseRedirect('/characters/create')
     characters = user.character_set.filter(is_default=False)
     return render(request, 'characters/current.html', {'characters': characters})
   else:

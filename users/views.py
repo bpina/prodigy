@@ -5,7 +5,7 @@ from characters.forms import CharacterForm
 
 def index(request):
   if not request.user.is_authenticated():
-    return HttpResponseRedirect('/register')
+    return HttpResponseRedirect('/security/login')
   characters = request.user.character_set.all()
   data = {'characters': characters}
 

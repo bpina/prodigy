@@ -3,6 +3,8 @@
 {% block content %}
 <h2>{{ user.username }}</h2>
 <span>{{ user.email }}</span>
+
+<h3>Characters</h3>
 <p>
 {% if default_character %}
 Current Character: {{ default_character.name }}
@@ -10,8 +12,6 @@ Current Character: {{ default_character.name }}
 You have no default character.
 {% endif %}
 </p>
-
-<h3>Characters</h3>
 {% include "shared/characters/list.html" with id="user-characters-list" class="" characters=characters %}
 <p>Click here to <a href="/characters/create">add a new character!</a></p>
 <p>Or, click here to <a href="/characters/current">change your current character</p>

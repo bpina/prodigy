@@ -30,6 +30,9 @@ def create(request):
     if form.is_valid():
       c = form.save(commit=False)
       c.user = request.user
+
+      if
+
       c.save()
     
       data = serializers.serialize('json', [c])

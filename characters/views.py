@@ -5,6 +5,7 @@ from characters.forms import CharacterForm, UpdateDefaultCharacterForm
 from django.views.decorators.csrf import csrf_protect
 from django.core import serializers
 from django.utils import simplejson
+from pyarmory import assets
 # Create your views here.
 
 def index(request):
@@ -13,7 +14,10 @@ def index(request):
 
 def show(request, server_name, character_name):
   c = get_object_or_404(Character, name=character_name, server__name=server_name)
-  return render(request, 'characters/show.html', {'character': c})
+  asset = assets.Character(c.server, c.name)
+  asset.load()
+
+  return render(request, 'characters/show.html', {'character': c, 'character_data': asset})
 
 @csrf_protect
 def create(request):
